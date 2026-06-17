@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reto de Ajedrez · JaqueMáTICas</title>
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;min-height:100vh;background:#2b2118;color:#f3e7cf;
+    font-family:'Trebuchet MS',Verdana,sans-serif;display:flex;flex-direction:column;align-items:center;padding:14px;}
+  h1{color:#e8b84b;font-size:1.3rem;margin:6px 0;text-align:center;}
+  .sub{color:#cdb48f;font-size:.8rem;text-align:center;margin-bottom:10px;}
+  .panel{background:#1c140c;border:3px solid #e8b84b;border-radius:10px;padding:14px;max-width:460px;width:100%;}
+  #prompt{font-size:.95rem;line-height:1.5;text-align:center;margin:4px 0 10px;min-height:42px;}
+  #board{display:grid;grid-template-columns:repeat(8,1fr);width:min(92vw,420px);aspect-ratio:1;margin:0 auto;
+    border:4px solid #8a6a3a;border-radius:6px;overflow:hidden;box-shadow:0 6px 0 rgba(0,0,0,.4);}
+  .cell{display:flex;align-items:center;justify-content:center;font-size:min(9.5vw,40px);line-height:1;
+    cursor:pointer;user-select:none;position:relative;}
+  .cell.light{background:#f0e0b8;} .cell.dark{background:#b58a55;}
+  .cell.sel{box-shadow:inset 0 0 0 4px #5a8f3c;}
+  .cell.hint{box-shadow:inset 0 0 0 4px #e8b84b;}
+  .cell.last{background:#d8c878;}
+  .pc.w{color:#fbf3da;text-shadow:0 0 2px #000,1px 1px 0 #7a5a1a,-1px -1px 0 #7a5a1a;}
+  .pc.b{color:#241208;text-shadow:0 0 1px #fff;}
+  #fb{text-align:center;font-size:.9rem;min-height:24px;margin:10px 0;font-weight:bold;}
+  .ok{color:#7fd048;} .bad{color:#ff8a7a;} .hintc{color:#e8b84b;}
+  .row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px;}
+  .btn{font-family:inherit;cursor:pointer;font-size:.85rem;color:#3a2a10;background:#e8b84b;border:2px solid #b8862c;
+    border-radius:8px;padding:10px 14px;box-shadow:0 3px 0 #7a5a1c;font-weight:bold;text-decoration:none;display:inline-block;}
+  .btn:active{transform:translateY(2px);box-shadow:0 1px 0 #7a5a1c;}
+  .btn.sec{background:#2e6a9e;color:#fff;border-color:#1d486e;box-shadow:0 3px 0 #143147;}
+  .btn.gray{background:#6b5d49;color:#fff;border-color:#4a3f30;box-shadow:0 3px 0 #36301f;}
+</style>
+</head>
+<body>
+  <h1>♟ Reto de Ajedrez del Reino</h1>
+  <p class="sub" id="opTitle">Practica las aperturas paso a paso</p>
+  <div class="panel">
+    <div class="row" style="margin-bottom:10px">
+      <button class="btn modeBtn" id="mCorto" onclick="setMode('corto')">Corto · 2-4 jugadas</button>
+      <button class="btn gray modeBtn" id="mLargo" onclick="setMode('largo')">Largo · 5-6 jugadas</button>
+    </div>
+    <div id="prompt"></div>
+    <div id="board"></div>
+    <div id="fb"></div>
+    <div class="row">
+      <button class="btn" onclick="newProblem()">🔄 Otro reto</button>
+      <button class="btn sec" onclick="pista()">💡 Pista</button>
+      <button class="btn gray" onclick="verJugada()">👁 Ver jugada</button>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <a class="btn gray" href="#" onclick="history.back();return false;">◀ Volver</a>
+    </div>
+  </div>
+
+<script>
+const FILES='abcdefgh';
+const FILLED={K:'♚',Q:'♛',R:'♜',B:'♝',N:'♞',P:'♟'};
+const sqName=(f,r)=>FILES[f]+(r+1);
+const parseSq=s=>[s.charCodeAt(0)-97, s.charCodeAt(1)-49];
+const moverOf=p=>(p%2===0)?'w':'b';
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+
+function initialBoard(){
+  const b=Array.from({length:8},()=>Array(8).fill(''));
+  const back=['R','N','B','Q','K','B','N','R'];
+  for(let f=0;f<8;f++){ b[f][0]=back[f]; b[f][1]='P'; b[f][6]='p'; b[f][7]=back[f].toLowerCase(); }
+  return b;
+}
+
+const LESSONS={
+  espanola:[
+    {name:'Apertura Española (Ruy López)', side:'w', moves:['e2e4','e7e5','g1f3','b8c6','f1b5']},
+    {name:'Española · variante Morphy',    side:'w', moves:['e2e4','e7e5','g1f3','b8c6','f1b5','a7a6','b5a4']},
+    {name:'Española · variante de Cambio', side:'w', moves:['e2e4','e7e5','g1f3','b8c6','f1b5','a7a6','b5c6']},
+    {name:'Española · defensa Berlín',     side:'w', moves:['e2e4','e7e5','g1f3','b8c6','f1b5','g8f6','d2d3']}
+  ],
+  francesa:[
+    {name:'Defensa Francesa (principal)',  side:'b', moves:['e2e4','e7e6','d2d4','d7d5']},
+    {name:'Francesa · variante de Avance', side:'b', moves:['e2e4','e7e6','d2d4','d7d5','e4e5','c7c5']},
+    {name:'Francesa · variante Tarrasch',  side:'b', moves:['e2e4','e7e6','d2d4','d7d5','b1d2','g8f6']},
+    {name:'Francesa · variante Winawer',   side:'b', moves:['e2e4','e7e6','d2d4','d7d5','b1c3','f8b4']},
+    {name:'Francesa · variante de Cambio', side:'b', moves:['e2e4','e7e6','d2d4','d7d5','e4d5','e6d5']}
+  ]
+};
+// Versiones LARGAS (5-6 jugadas del alumno)
+const LESSONS_LONG={
+  espanola:[
+    {name:'Española · Morphy (clásica)', side:'w', moves:['e2e4','e7e5','g1f3','b8c6','f1b5','a7a6','b5a4','g8f6','e1g1','f8e7','f1e1']},
+    {name:'Española · Cambio (larga)',   side:'w', moves:['e2e4','e7e5','g1f3','b8c6','f1b5','a7a6','b5c6','d7c6','e1g1','f7f6','d2d4']},
+    {name:'Española · Berlín (larga)',   side:'w', moves:['e2e4','e7e5','g1f3','b8c6','f1b5','g8f6','e1g1','f6e4','d2d4','e4d6','b5c6']}
+  ],
+  francesa:[
+    {name:'Francesa · Avance (larga)',   side:'b', moves:['e2e4','e7e6','d2d4','d7d5','e4e5','c7c5','c2c3','b8c6','g1f3','d8b6']},
+    {name:'Francesa · Tarrasch (larga)', side:'b', moves:['e2e4','e7e6','d2d4','d7d5','b1d2','g8f6','e4e5','f6d7','f1d3','c7c5']},
+    {name:'Francesa · Winawer (larga)',  side:'b', moves:['e2e4','e7e6','d2d4','d7d5','b1c3','f8b4','e4e5','c7c5','a2a3','b4c3']},
+    {name:'Francesa · Clásica (larga)',  side:'b', moves:['e2e4','e7e6','d2d4','d7d5','b1c3','g8f6','c1g5','f8e7','e4e5','f6d7']}
+  ]
+};
+
+function paramOp(){ const m=(location.search.match(/op=([a-z]+)/)||[])[1]; return (m==='francesa'||m==='espanola'||m==='ambas')?m:'ambas'; }
+
+let board, lesson, ply, sel=null, hint=null, busy=false, lastMove=null, mode='corto';
+
+function setMode(m){
+  mode=m;
+  document.getElementById('mCorto').className = 'btn modeBtn'+(m==='corto'?'':' gray');
+  document.getElementById('mLargo').className = 'btn modeBtn'+(m==='largo'?'':' gray');
+  newProblem();
+}
+function newProblem(){
+  const op=paramOp();
+  const SET = mode==='largo'? LESSONS_LONG : LESSONS;
+  const pool = op==='ambas'? SET.espanola.concat(SET.francesa) : SET[op];
+  lesson=pick(pool);
+  board=initialBoard(); ply=0; sel=null; hint=null; lastMove=null; busy=false;
+  document.getElementById('fb').textContent='';
+  render(); updatePrompt(); autoOpponent();
+}
+
+function isOwn(p,side){ if(!p) return false; return side==='w'? p===p.toUpperCase() : p===p.toLowerCase(); }
+function applyMove(mv){
+  const [ff,fr]=parseSq(mv.slice(0,2)), [tf,tr]=parseSq(mv.slice(2,4));
+  const pc=board[ff][fr]; board[tf][tr]=pc; board[ff][fr]='';
+  if(pc.toUpperCase()==='K' && Math.abs(tf-ff)===2){          // enroque: mover también la torre
+    if(tf===6){ board[5][fr]=board[7][fr]; board[7][fr]=''; }  // corto (h->f)
+    else if(tf===2){ board[3][fr]=board[0][fr]; board[0][fr]=''; } // largo (a->d)
+  }
+  lastMove=[[ff,fr],[tf,tr]];
+}
+
+function autoOpponent(){
+  if(ply>=lesson.moves.length){ finish(); return; }
+  if(moverOf(ply)===lesson.side){ busy=false; updatePrompt(); render(); return; }
+  busy=true; updatePrompt();
+  setTimeout(()=>{ applyMove(lesson.moves[ply]); ply++; render(); autoOpponent(); }, 480);
+}
+
+function onCell(f,r){
+  if(busy || ply>=lesson.moves.length || moverOf(ply)!==lesson.side) return;
+  const p=board[f][r];
+  if(sel){
+    if(sel[0]===f && sel[1]===r){ sel=null; render(); return; }
+    const mv=sqName(sel[0],sel[1])+sqName(f,r);
+    if(mv===lesson.moves[ply]){
+      applyMove(mv); ply++; sel=null; hint=null; render();
+      fb('✔ ¡Bien! Jugada correcta de la apertura.','ok');
+      busy=true; setTimeout(autoOpponent,350);
+    } else if(isOwn(p,lesson.side)){
+      sel=[f,r]; render();   // cambiar de pieza seleccionada
+    } else {
+      fb('✘ Esa no es la jugada de la apertura. Pulsa 💡 Pista si lo necesitas.','bad');
+      sel=null; render();
+    }
+  } else if(isOwn(p,lesson.side)){
+    sel=[f,r]; render();
+  }
+}
+
+function pista(){
+  if(busy || ply>=lesson.moves.length || moverOf(ply)!==lesson.side) return;
+  hint=parseSq(lesson.moves[ply].slice(0,2)); render();
+  fb('💡 Mueve la pieza marcada en dorado.','hintc');
+}
+function verJugada(){
+  if(busy || ply>=lesson.moves.length || moverOf(ply)!==lesson.side) return;
+  applyMove(lesson.moves[ply]); ply++; sel=null; hint=null; render();
+  fb('👁 Esta era la jugada correcta.','hintc');
+  busy=true; setTimeout(autoOpponent,400);
+}
+
+function finish(){
+  busy=true;
+  document.getElementById('prompt').innerHTML=`🏆 <b>¡Línea completada!</b><br>Has practicado: <b>${lesson.name}</b>.`;
+  fb('¡Bien jugado! Pulsa "🔄 Otro reto" para practicar otra apertura.','ok');
+}
+
+function updatePrompt(){
+  if(ply>=lesson.moves.length) return;
+  const sideTxt = lesson.side==='w'?'BLANCAS ♙ (abajo)':'NEGRAS ♟ (abajo)';
+  const num = Math.floor(ply/2)+1;
+  document.getElementById('prompt').innerHTML =
+    `Practica: <b>${lesson.name}</b><br>Juegas con <b>${sideTxt}</b>. Encuentra la jugada nº ${num} de la apertura.`;
+}
+function fb(msg,cls){ const e=document.getElementById('fb'); e.textContent=msg; e.className=cls||''; }
+
+function render(){
+  const g=document.getElementById('board'); g.innerHTML='';
+  const whiteView = lesson.side==='w';
+  for(let dr=0;dr<8;dr++) for(let dc=0;dc<8;dc++){
+    let f,r;
+    if(whiteView){ r=7-dr; f=dc; } else { r=dr; f=7-dc; }
+    const cell=document.createElement('div');
+    cell.className='cell '+(((f+r)%2===0)?'dark':'light');
+    if(lastMove && ((lastMove[0][0]===f&&lastMove[0][1]===r)||(lastMove[1][0]===f&&lastMove[1][1]===r))) cell.classList.add('last');
+    if(sel && sel[0]===f && sel[1]===r) cell.classList.add('sel');
+    if(hint && hint[0]===f && hint[1]===r) cell.classList.add('hint');
+    const p=board[f][r];
+    if(p){ const s=document.createElement('span'); s.className='pc '+(p===p.toUpperCase()?'w':'b'); s.textContent=FILLED[p.toUpperCase()]; cell.appendChild(s); }
+    cell.onclick=()=>onCell(f,r);
+    g.appendChild(cell);
+  }
+}
+
+// título según la apertura elegida
+(function(){
+  const op=paramOp();
+  const t={espanola:'Practica la APERTURA ESPAÑOLA (Ruy López)',francesa:'Practica la DEFENSA FRANCESA',ambas:'Practica la Apertura Española y la Defensa Francesa'}[op];
+  document.getElementById('opTitle').textContent=t;
+})();
+newProblem();
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajedrez Matemático del Reino · JaqueMáTICas</title>
+<link rel="stylesheet" href="ajedrez.css">
+</head>
+<body>
+<div id="app">
+  <section class="screen active">
+    <div class="panel center">
+      <canvas id="introCanvas" width="320" height="120"></canvas>
+      <h1>AJEDREZ MATEMÁTICO</h1>
+      <p style="color:var(--oro)">★ Reino de Vainilla · JaqueMáTICas ★</p>
+      <p class="small">Mueve tu pieza como en el ajedrez (peón, torre, alfil, caballo o dama):
+      acierta una prueba, elige casilla y llega a la <b>casilla clave 👑</b> esquivando las rocas 🪨.
+      Juega la aventura entera o un nivel suelto.</p>
+
+      <a class="btn oro" href="Juego_Completo.html" style="font-size:13px">👑 JUGAR LA AVENTURA COMPLETA</a>
+
+      <h3 style="margin-top:16px">Niveles sueltos</h3>
+      <div class="lvlgrid">
+        <a class="lvlcard" href="Nivel_1_Operaciones.html"><span class="ic">➗</span>1 · Operaciones</a>
+        <a class="lvlcard" href="Nivel_2_Decimales.html"><span class="ic">🔢</span>2 · Decimales</a>
+        <a class="lvlcard" href="Nivel_3_Dinero.html"><span class="ic">🪙</span>3 · Dinero</a>
+        <a class="lvlcard" href="Nivel_4_Fracciones.html"><span class="ic">🍰</span>4 · Fracciones</a>
+        <a class="lvlcard" href="Nivel_5_Medidas.html"><span class="ic">📏</span>5 · Medidas</a>
+        <a class="lvlcard" href="Nivel_6_El_tiempo.html"><span class="ic">⏰</span>6 · El tiempo</a>
+        <a class="lvlcard" href="Nivel_7_Estadistica.html"><span class="ic">📊</span>7 · Estadística</a>
+        <a class="lvlcard" href="Nivel_8_Geometria.html"><span class="ic">🔷</span>8 · Geometría</a>
+      </div>
+
+      <p class="center small" style="color:#ffb38a">❤️❤️❤️ 3 vidas por nivel. Si las pierdes, repites el nivel.</p>
+      <a class="btn azul" href="../index.html">◀ Volver a la web JaqueMáTICas</a>
+    </div>
+  </section>
+</div>
+<script src="ajedrez.js"></script>
+<script>drawIntroArt();</script>
+</body>
+</html>

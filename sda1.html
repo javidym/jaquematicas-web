@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDA 1 · Vinalopó · JaqueMáTICas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sda-page">
+
+  <div class="chapter-modal" id="cap-modal">
+    <div class="chapter-modal-inner">
+      <button class="chapter-modal-close" onclick="document.getElementById('cap-modal').classList.remove('open')" aria-label="Cerrar">✕</button>
+      <img src="imagenes/web_cap2_alcudia.jpg" alt="Ilustración Capítulo 1" class="chapter-illus" loading="lazy">
+      <div class="chapter-text">
+        <h2>Capítulo 1: Vinalopop y el bosque de los cubos arcoíris</h2>
+        <p>El pequeño Peón Vinalopop abrió los ojos entre montones de hojas de colores. Estaba en el Bosque de los Cubos Arcoíris, un lugar donde los árboles crecían en forma de figuras geométricas: cubos, prismas y pirámides que cambiaban de color con la luz.</p>
+        <p class="dialogo">—¿Dónde estoy? —susurró.</p>
+        <p>El suelo vibraba con murmullos, como si los números mismos susurraran entre las raíces. En una roca cercana leyó un mensaje grabado:</p>
+        <p class="dialogo">«Cuando los resultados se ordenen, el bosque recuperará su equilibrio.»</p>
+        <p>Vinalopop se rascó la cabeza.</p>
+        <p class="dialogo">—¿Ordenar los resultados? ¡Eso sí lo entiendo!</p>
+        <p>Comenzó a agrupar los cubos, los cuadrados, las multiplicaciones y también divisiones: primero las operaciones más pequeñas, luego las medianas y, por último, las grandes. Cada vez que obtenía un resultado correcto, un árbol recuperaba su color.</p>
+        <p>Cuando terminó, el bosque se llenó de luz. Una corriente de aire fresco le rozó las mejillas y, en la distancia, se alzó una torre altísima.</p>
+        <p class="dialogo">—Allí debe encontrarse Alcudia —dijo, y echó a andar.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <a href="index.html" class="nav-btn">← Inicio</a>
+    <span class="nav-title">JaqueMáTICas · SDA 1</span>
+    <a href="sda2.html" class="nav-btn">SDA 2 →</a>
+  </nav>
+
+  <main class="sda-content">
+
+    <div class="sda-header">
+      <img src="vinalopop guay final.png" alt="Vinalopó" class="sda-character-img">
+      <div class="sda-header-text">
+        <span class="sda-number">SITUACIÓN DE APRENDIZAJE 1</span>
+        <h1>Vinalopó</h1>
+        <span class="sda-topic">El Bosque de los Cubos Arcoíris</span>
+        <p>Vinalopop despierta en un bosque mágico donde las multiplicaciones y divisiones son la clave para restaurar el equilibrio.</p>
+      </div>
+    </div>
+
+    <div class="chess-divider"></div>
+
+    <div class="cards-grid-2">
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3>Leer el Capítulo</h3>
+        <p>La aventura de Vinalopop en el bosque donde cada operación correcta hace brillar un árbol.</p>
+        <button class="card-btn" onclick="document.getElementById('cap-modal').classList.add('open')">📖 Leer Capítulo 1</button>
+      </div>
+      <div class="card">
+        <span class="card-icon">📓</span>
+        <h3>Cuaderno Digital</h3>
+        <p>Fichas interactivas de la SDA 1 en LiveWorksheets. Multiplicaciones y divisiones.</p>
+        <a href="https://www.liveworksheets.com/es/student-workbook/7681953" target="_blank" class="card-btn">📓 Abrir Cuaderno</a>
+      </div>
+    </div>
+
+    <div class="cards-grid-2">
+      <div class="card card-video">
+        <div class="card-header-row">
+          <span class="card-icon">🎬</span>
+          <h3>Flipped Classroom</h3>
+          <span class="fc-badge">Vídeo</span>
+        </div>
+        <p>Cómo se colocan y mueven las piezas del ajedrez</p>
+        <div class="video-wrap">
+          <div class="yt-facade" onclick="ytPlay(this,'wsicb6FuC24')" role="button" tabindex="0" aria-label="Reproducir vídeo">
+            <img src="https://i.ytimg.com/vi/wsicb6FuC24/hqdefault.jpg" alt="Miniatura vídeo" loading="lazy">
+            <div class="yt-play-btn">
+              <svg viewBox="0 0 68 48" width="68" height="48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/>
+                <path d="M45 24L27 14v20" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card puzzle-mini-card">
+        <span class="card-icon">♟</span>
+        <h3>Reto de Ajedrez</h3>
+        <p class="puzzle-opening">Apertura Española · Ruy López</p>
+        <span class="puzzle-badge">★☆☆ Iniciación</span>
+        <p class="puzzle-desc">Tácticas sencillas en posiciones de Ruy López. ¡Perfectas para quienes empiezan!</p>
+        <a href="practica_ajedrez.html?op=espanola" class="card-btn">♟ Practicar en el tablero</a>
+      </div>
+    </div>
+
+    <details class="resource-details">
+      <summary>
+        <span class="resource-icon">🎮</span>
+        <span class="resource-title">Actividad Interactiva · Multiplicaciones y Divisiones</span>
+        <span class="resource-expand">▼</span>
+      </summary>
+      <div class="resource-content">
+        <div class="mini-quiz">
+          <div class="quiz-q">
+            <p class="quiz-q-text">1. ¿Cuánto es 7 × 8?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">54</button>
+              <button data-ok onclick="checkAnswer(this,true)">56</button>
+              <button onclick="checkAnswer(this,false)">63</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">2. ¿Cuánto es 63 ÷ 9?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">6</button>
+              <button onclick="checkAnswer(this,false)">8</button>
+              <button data-ok onclick="checkAnswer(this,true)">7</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">3. ¿Cuánto es 12 × 6?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">68</button>
+              <button data-ok onclick="checkAnswer(this,true)">72</button>
+              <button onclick="checkAnswer(this,false)">66</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">4. ¿Cuánto es 48 ÷ 6?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">6</button>
+              <button data-ok onclick="checkAnswer(this,true)">8</button>
+              <button onclick="checkAnswer(this,false)">9</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">5. ¿Cuánto es 25 × 4?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">80</button>
+              <button onclick="checkAnswer(this,false)">90</button>
+              <button data-ok onclick="checkAnswer(this,true)">100</button>
+            </div>
+          </div>
+          <div class="quiz-score"></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="cards-grid-2">
+      <div class="card">
+        <span class="card-icon">♟️</span>
+        <h3>Ajedrez Matemático</h3>
+        <p>Cruza el tablero de ajedrez: acierta cada prueba de operaciones para que tu pieza avance hasta la corona 👑.</p>
+        <a href="ajedrez/Nivel_1_Operaciones.html" class="card-btn">♟️ Jugar Nivel 1</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎮</span>
+        <h3>Videojuego del Reino</h3>
+        <p>Juega el Capítulo 1 en pixel art: elige nivel (bronce, plata u oro) y supera los retos de multiplicación y división. ¡Preguntas distintas cada vez!</p>
+        <a href="juego/Capitulo_1_Multiplicacion_y_division.html" class="card-btn">🎮 Jugar Capítulo 1</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔮</span>
+        <h3>Recursos Extra</h3>
+        <p>Próximamente: más juegos y actividades para tablet y ordenador.</p>
+        <button class="card-btn coming-soon">🔒 Próximamente</button>
+      </div>
+    </div>
+
+    <div class="chess-divider"></div>
+
+    <div class="bottom-nav">
+      <a href="index.html" class="nav-btn">← Inicio</a>
+      <a href="index.html" class="nav-btn home-btn">⌂ Mapa del Reino</a>
+      <a href="sda2.html" class="nav-btn">SDA 2 →</a>
+    </div>
+
+  </main>
+  <script src="utils.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDA 4 · La Dama Glorieta · JaqueMáTICas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sda-page">
+
+  <div class="chapter-modal" id="cap-modal">
+    <div class="chapter-modal-inner">
+      <button class="chapter-modal-close" onclick="document.getElementById('cap-modal').classList.remove('open')" aria-label="Cerrar">✕</button>
+      <img src="imagenes/web_cap5_raval.jpg" alt="Ilustración Capítulo 4" class="chapter-illus" loading="lazy">
+      <div class="chapter-text">
+        <h2>Capítulo 4: El gran trueque de Glorieta</h2>
+        <p>Guiados por el tablero mágico, Vinalopop y Alcudia llegaron a una plaza desierta. Era el Mercado Real, lugar donde la Dama Glorieta intentaba mantener la paz entre los comerciantes del Reino.</p>
+        <p>El mercado estaba sometido a un puro caos: montones de dulces y tesoros estaban repartidos de forma desigual.</p>
+        <p class="dialogo">—El equilibrio se ha roto —dijo Glorieta—. Necesitamos repartirlo todo con justicia.</p>
+        <p>Vinalopop observó los montones y tuvo una idea.</p>
+        <p class="dialogo">—Si juntamos las partes que faltan, cada puesto tendrá lo mismo.</p>
+        <p>Así, con ayuda de Alcudia y Glorieta, unieron mitades con mitades, tercios con tercios, cuartos con cuartos. Cada vez que completaban una cantidad entera, una melodía resonaba en el aire.</p>
+        <p>Cuando el último puesto quedó equilibrado, la plaza volvió a brillar.</p>
+        <p class="dialogo">—Habéis restaurado la armonía —dijo Glorieta—. Yo también iré con vosotros.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <a href="sda3.html" class="nav-btn">← SDA 3</a>
+    <span class="nav-title">JaqueMáTICas · SDA 4</span>
+    <a href="sda5.html" class="nav-btn">SDA 5 →</a>
+  </nav>
+
+  <main class="sda-content">
+
+    <div class="sda-header">
+      <img src="glorieta guay.png" alt="La Dama Glorieta" class="sda-character-img">
+      <div class="sda-header-text">
+        <span class="sda-number">SITUACIÓN DE APRENDIZAJE 4</span>
+        <h1>La Dama Glorieta</h1>
+        <span class="sda-topic">Fracciones</span>
+        <p>El Mercado Real está en caos: los tesoros están mal repartidos. La Dama Glorieta necesita a quien domine las fracciones para restaurar la justicia y el equilibrio.</p>
+      </div>
+    </div>
+
+    <div class="chess-divider"></div>
+
+    <div class="cards-grid-2">
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3>Leer el Capítulo</h3>
+        <p>Descubre cómo Vinalopop, Alcudia y Glorieta reparten con justicia los tesoros del Mercado Real usando fracciones.</p>
+        <button class="card-btn" onclick="document.getElementById('cap-modal').classList.add('open')">📖 Leer Capítulo 4</button>
+      </div>
+      <div class="card">
+        <span class="card-icon">📓</span>
+        <h3>Cuaderno Digital</h3>
+        <p>Fichas interactivas en LiveWorksheets. Practica con las fracciones.</p>
+        <a href="https://www.liveworksheets.com/es/student-workbook/7681956" target="_blank" class="card-btn">📓 Abrir Cuaderno</a>
+      </div>
+    </div>
+
+    <div class="cards-grid-2">
+      <div class="card card-video">
+        <div class="card-header-row">
+          <span class="card-icon">🎬</span>
+          <h3>Flipped Classroom</h3>
+          <span class="fc-badge">Vídeo</span>
+        </div>
+        <p>Otro truco en la Apertura Española con Ruy López</p>
+        <div class="video-wrap">
+          <div class="yt-facade" onclick="ytPlay(this,'ORtLoahFwzQ')" role="button" tabindex="0" aria-label="Reproducir vídeo">
+            <img src="https://i.ytimg.com/vi/ORtLoahFwzQ/hqdefault.jpg" alt="Miniatura vídeo" loading="lazy">
+            <div class="yt-play-btn">
+              <svg viewBox="0 0 68 48" width="68" height="48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/>
+                <path d="M45 24L27 14v20" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card puzzle-mini-card">
+        <span class="card-icon">♟</span>
+        <h3>Reto de Ajedrez</h3>
+        <p class="puzzle-opening">Apertura Española · defensa Berlín</p>
+        <span class="puzzle-badge">★☆☆ Iniciación</span>
+        <p class="puzzle-desc">Tácticas sencillas en posiciones de Ruy López. ¡Perfectas para quienes empiezan!</p>
+        <a href="practica_ajedrez.html?op=espanola" class="card-btn">♟ Practicar en el tablero</a>
+      </div>
+    </div>
+
+    <details class="resource-details">
+      <summary>
+        <span class="resource-icon">🎮</span>
+        <span class="resource-title">Actividad Interactiva · Fracciones</span>
+        <span class="resource-expand">▼</span>
+      </summary>
+      <div class="resource-content">
+        <div class="mini-quiz">
+          <div class="quiz-q">
+            <p class="quiz-q-text">1. ¿Qué fracción representa la mitad de algo?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">1/3</button>
+              <button data-ok onclick="checkAnswer(this,true)">1/2</button>
+              <button onclick="checkAnswer(this,false)">1/4</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">2. ¿Cuánto es 1/4 + 1/4?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">1/8</button>
+              <button onclick="checkAnswer(this,false)">1/4</button>
+              <button data-ok onclick="checkAnswer(this,true)">2/4</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">3. ¿Cuál fracción es mayor?</p>
+            <div class="quiz-opts">
+              <button data-ok onclick="checkAnswer(this,true)">1/3</button>
+              <button onclick="checkAnswer(this,false)">1/4</button>
+              <button onclick="checkAnswer(this,false)">Son iguales</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">4. ¿Cuál de estas fracciones equivale a 1/2?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">2/6</button>
+              <button data-ok onclick="checkAnswer(this,true)">2/4</button>
+              <button onclick="checkAnswer(this,false)">3/8</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">5. Una pizza se parte en 8 trozos iguales. ¿Qué fracción representa 3 trozos?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">3/5</button>
+              <button onclick="checkAnswer(this,false)">1/3</button>
+              <button data-ok onclick="checkAnswer(this,true)">3/8</button>
+            </div>
+          </div>
+          <div class="quiz-score"></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="cards-grid-2">
+      <div class="card">
+        <span class="card-icon">♟️</span>
+        <h3>Ajedrez Matemático</h3>
+        <p>Cruza el tablero de ajedrez: acierta cada prueba de fracciones para que tu pieza avance hasta la corona 👑.</p>
+        <a href="ajedrez/Nivel_4_Fracciones.html" class="card-btn">♟️ Jugar Nivel 4</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎮</span>
+        <h3>Videojuego del Reino</h3>
+        <p>Juega el Capítulo 4 en pixel art: elige nivel (bronce, plata u oro) y supera los retos de fracciones. ¡Preguntas distintas cada vez!</p>
+        <a href="juego/Capitulo_4_Fracciones.html" class="card-btn">🎮 Jugar Capítulo 4</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔮</span>
+        <h3>Recursos Extra</h3>
+        <p>Próximamente: más juegos y actividades para tablet y ordenador.</p>
+        <button class="card-btn coming-soon">🔒 Próximamente</button>
+      </div>
+    </div>
+
+    <div class="chess-divider"></div>
+
+    <div class="bottom-nav">
+      <a href="sda3.html" class="nav-btn">← SDA 3</a>
+      <a href="index.html" class="nav-btn home-btn">⌂ Mapa del Reino</a>
+      <a href="sda5.html" class="nav-btn">SDA 5 →</a>
+    </div>
+
+  </main>
+  <div class="lock-overlay" id="lock-overlay">
+    <div class="lock-box">
+      <div class="lock-icon">🔒</div>
+      <h2>Unidad bloqueada</h2>
+      <p>Introduce el código secreto para acceder a esta unidad.</p>
+      <input class="lock-input" id="lock-input" type="text" placeholder="Código..." maxlength="20" autocomplete="off" onkeydown="if(event.key==='Enter')tryUnlock(4)">
+      <button class="lock-btn" onclick="tryUnlock(4)">🗝️ Entrar</button>
+      <span class="lock-error" id="lock-error">Código incorrecto. ¡Inténtalo de nuevo!</span>
+      <a href="index.html" class="lock-back">← Volver al Mapa del Reino</a>
+    </div>
+  </div>
+  <script src="utils.js"></script>
+  <script>initLock(4);</script>
+</body>
+</html>

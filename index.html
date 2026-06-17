@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>JaqueMáTICas · Reino del Ajedrez</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="main-page">
+
+  <div class="map-wrapper">
+    <h1 class="map-title">JaqueMáTICas</h1>
+    <p class="map-subtitle">Pulsa sobre cada personaje para entrar en su Situación de Aprendizaje</p>
+    <p class="map-mobile-tip" style="display:none; text-align:center; color:var(--gold); font-family:'Cinzel',serif; font-size:.72rem; background:rgba(201,168,76,.1); border:1px solid rgba(201,168,76,.25); border-radius:8px; padding:7px 14px; margin-bottom:10px; letter-spacing:.04em;">📱 En móvil, usa la lista de abajo para navegar</p>
+
+    <div class="map-container">
+      <img
+        src="Reina y rey en ajedrez medieval.png"
+        alt="Mapa del Reino de JaqueMáTICas"
+        class="main-map"
+      >
+
+      <!-- SDA 6 · Reloj del Ajedrez (extremo izquierdo, caja con reloj) -->
+      <a href="sda6.html" class="hotspot hotspot-reloj" aria-label="SDA 6: El Reloj del Ajedrez">
+        <span class="hotspot-label">SDA 6 · El Reloj</span>
+      </a>
+
+      <!-- SDA 5 · Raval el Caballo (pieza caballo, izquierda) -->
+      <a href="sda5.html" class="hotspot hotspot-raval" aria-label="SDA 5: Raval el Caballo">
+        <span class="hotspot-label">SDA 5 · Raval</span>
+      </a>
+
+      <!-- SDA 7 · Alfin el Informático (camiseta gris, gafas, centro-izq) -->
+      <a href="sda7.html" class="hotspot hotspot-alfin" aria-label="SDA 7: Alfin el Informático">
+        <span class="hotspot-label">SDA 7 · Alfin</span>
+      </a>
+
+      <!-- SDA 1 · Vinalopó (centro, delante, mochila) -->
+      <a href="sda1.html" class="hotspot hotspot-vinalopop" aria-label="SDA 1: Vinalopó">
+        <span class="hotspot-label">SDA 1 · Vinalopó</span>
+      </a>
+
+      <!-- SDA 8 · Pi el Rey (chaqueta verde, fondo centro) -->
+      <a href="sda8.html" class="hotspot hotspot-pi" aria-label="SDA 8: Pi el Rey">
+        <span class="hotspot-label">SDA 8 · Pi el Rey</span>
+      </a>
+
+      <!-- SDA 2 · Alcudia la Torre (figura azul, centro-dcha) -->
+      <a href="sda2.html" class="hotspot hotspot-alcudia" aria-label="SDA 2: Alcudia la Torre · Decimales">
+        <span class="hotspot-label">SDA 2 · Alcudia</span>
+      </a>
+
+      <!-- SDA 3 · La Fuente (fuente decorativa, fondo dcha) -->
+      <a href="sda3.html" class="hotspot hotspot-fuente" aria-label="SDA 3: La Fuente · El Mercado">
+        <span class="hotspot-label">SDA 3 · La Fuente</span>
+      </a>
+
+      <!-- SDA 4 · La Dama Glorieta (pelo oscuro, extremo dcha) -->
+      <a href="sda4.html" class="hotspot hotspot-glorieta" aria-label="SDA 4: La Dama Glorieta · Fracciones">
+        <span class="hotspot-label">SDA 4 · Glorieta</span>
+      </a>
+    </div>
+
+    <!-- Índice rápido -->
+    <nav class="sda-index" aria-label="Índice de Situaciones de Aprendizaje">
+      <h2>Situaciones de Aprendizaje</h2>
+      <div class="sda-index-grid">
+        <a href="sda1.html" class="sda-index-item"><span class="sda-num">1</span> Vinalopó</a>
+        <a href="sda2.html" class="sda-index-item"><span class="sda-num">2</span> Alcudia · Decimales <span class="sda-lock">🔒</span></a>
+        <a href="sda3.html" class="sda-index-item"><span class="sda-num">3</span> La Fuente · Mercado <span class="sda-lock">🔒</span></a>
+        <a href="sda4.html" class="sda-index-item"><span class="sda-num">4</span> Glorieta · Fracciones <span class="sda-lock">🔒</span></a>
+        <a href="sda5.html" class="sda-index-item"><span class="sda-num">5</span> Raval · Medidas <span class="sda-lock">🔒</span></a>
+        <a href="sda6.html" class="sda-index-item"><span class="sda-num">6</span> El Reloj · Tiempo <span class="sda-lock">🔒</span></a>
+        <a href="sda7.html" class="sda-index-item"><span class="sda-num">7</span> Alfin · Estadística <span class="sda-lock">🔒</span></a>
+        <a href="sda8.html" class="sda-index-item"><span class="sda-num">8</span> Pi el Rey · Geometría <span class="sda-lock">🔒</span></a>
+      </div>
+    </nav>
+
+    <!-- Juegos del Reino -->
+    <nav class="sda-index" aria-label="Juegos del Reino">
+      <h2>🎮 Juegos del Reino</h2>
+      <div class="sda-index-grid">
+        <a href="juego/index.html" class="sda-index-item"><span class="sda-num">🎮</span> Videojuego del Reino · plataformas</a>
+        <a href="ajedrez/index.html" class="sda-index-item"><span class="sda-num">♟️</span> Ajedrez Matemático · tablero</a>
+      </div>
+    </nav>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+:root{
+  --crema:#f5e7c4; --oro:#e8b84b; --oro-osc:#b8862c; --verde:#5a8f3c;
+  --rojo:#c0392b; --azul:#2e6a9e; --panel:#2b2118; --tinta:#1c140c;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0;background:#1c140c;color:#fff;font-family:'Press Start 2P',monospace;image-rendering:pixelated;}
+body{display:flex;flex-direction:column;align-items:center;min-height:100vh;
+  background:repeating-conic-gradient(#241a10 0% 25%, #2c2114 0% 50%) 0 0 / 64px 64px;}
+#app{width:100%;max-width:760px;padding:10px;}
+.screen{display:none;} .screen.active{display:block;animation:fade .35s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.panel{background:var(--panel);border:4px solid var(--oro);box-shadow:0 0 0 4px var(--tinta),0 8px 0 4px rgba(0,0,0,.4);padding:16px;border-radius:6px;}
+h1{font-size:18px;color:var(--oro);text-shadow:3px 3px 0 #000;text-align:center;line-height:1.5;margin:0 0 12px;}
+h2{font-size:13px;color:var(--oro);text-shadow:2px 2px 0 #000;line-height:1.5;margin:0 0 10px;}
+h3{font-size:11px;color:#ffe9b0;}
+p{font-size:10px;line-height:1.9;color:#f3e7cf;}
+.small{font-size:8px;line-height:1.8;color:#cdb48f;}
+.center{text-align:center;}
+.row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;}
+.btn{font-family:inherit;cursor:pointer;font-size:11px;color:#fff;display:inline-block;text-decoration:none;text-align:center;
+  background:var(--verde);border:3px solid #2f5a22;box-shadow:0 4px 0 #1f3a16,inset 0 0 0 2px rgba(255,255,255,.15);
+  padding:12px 16px;border-radius:4px;margin:6px;transition:transform .05s;}
+.btn:hover{filter:brightness(1.1);} .btn:active{transform:translateY(3px);box-shadow:0 1px 0 #1f3a16;}
+.btn.oro{background:var(--oro);border-color:var(--oro-osc);box-shadow:0 4px 0 #7a5a1c;color:#3a2a10;}
+.btn.azul{background:var(--azul);border-color:#1d486e;box-shadow:0 4px 0 #143147;}
+.btn.rojo{background:var(--rojo);border-color:#7d271d;box-shadow:0 4px 0 #5d1c14;}
+canvas{image-rendering:pixelated;display:block;margin:0 auto;}
+#board{border:4px solid var(--oro);box-shadow:0 0 0 4px var(--tinta);border-radius:4px;background:#caa46a;max-width:100%;height:auto;}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.badge{background:var(--tinta);border:2px solid var(--oro);padding:7px 9px;border-radius:4px;font-size:9px;color:var(--oro);}
+.hearts{font-size:15px;letter-spacing:2px;}
+.qbox{background:var(--tinta);border:3px solid var(--oro);border-radius:6px;padding:14px;margin:12px 0;text-align:center;}
+.qtext{font-size:15px;color:#ffe9b0;line-height:1.7;}
+.opt{font-family:inherit;cursor:pointer;font-size:14px;color:#3a2a10;background:var(--crema);border:3px solid var(--oro-osc);
+  box-shadow:0 4px 0 #9a7424;padding:14px 18px;border-radius:6px;min-width:90px;transition:transform .05s;}
+.opt:hover{filter:brightness(1.05);} .opt:active{transform:translateY(3px);box-shadow:0 1px 0 #9a7424;}
+.opt.good{background:var(--verde);color:#fff;border-color:#2f5a22;box-shadow:0 4px 0 #1f3a16;}
+.opt.bad{background:var(--rojo);color:#fff;border-color:#7d271d;box-shadow:0 4px 0 #5d1c14;}
+.feedback{font-size:11px;min-height:20px;margin:8px 0;text-align:center;}
+.narr{background:#20180f;border-left:5px solid var(--oro);padding:12px;margin:10px 0;border-radius:4px;}
+.narr p{color:#ffeec2;font-size:9px;}
+.shake{animation:sh .35s;}
+@keyframes sh{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+.victory-emoji{font-size:30px;text-align:center;letter-spacing:6px;line-height:1.6;}
+.lvlgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0;}
+@media(max-width:560px){.lvlgrid{grid-template-columns:repeat(2,1fr);}}
+.lvlcard{background:var(--tinta);border:3px solid var(--oro-osc);border-radius:6px;padding:10px;text-align:center;color:#ffe9b0;font-size:8px;box-shadow:0 4px 0 #6e521a;text-decoration:none;display:block;transition:transform .05s;}
+.lvlcard:hover{filter:brightness(1.1);} .lvlcard:active{transform:translateY(3px);box-shadow:0 1px 0 #6e521a;}
+.lvlcard .ic{font-size:18px;display:block;margin-bottom:4px;}

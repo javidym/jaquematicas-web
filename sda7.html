@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDA 7 · Alfin el Informático · JaqueMáTICas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sda-page">
+
+  <div class="chapter-modal" id="cap-modal">
+    <div class="chapter-modal-inner">
+      <button class="chapter-modal-close" onclick="document.getElementById('cap-modal').classList.remove('open')" aria-label="Cerrar">✕</button>
+      <img src="imagenes/web_cap8_pi.jpg" alt="Ilustración Capítulo 7" class="chapter-illus" loading="lazy">
+      <div class="chapter-text">
+        <h2>Capítulo 7: Alfín y el observatorio de datos</h2>
+        <p>El grupo encontró a Alfín en lo alto de un observatorio hecho de cristales. Frente a él, docenas de tableros giraban lentamente, mostrando jugadas, puntos y resultados.</p>
+        <p class="dialogo">—He estado estudiando el ritmo del reino —dijo Alfín—. Cada jugada deja un rastro. Si analizamos los datos, podremos descubrir dónde se oculta el Rey Pi.</p>
+        <p>Los guardianes ayudaron a contar y clasificar los movimientos: cuántas veces se movía el caballo, cuántas piezas defendían el reino, quién habitaba en Vainilla, qué movimientos se repetían…</p>
+        <p>Cuando analizaron toda la información, las casillas del tablero comenzaron a girar hasta formar una espiral dorada que apuntaba con claridad hacia un punto del mapa suspendido sobre el observatorio.</p>
+        <p class="dialogo">—El Palacio Geométrico —susurró Glorieta, con los ojos muy abiertos.</p>
+        <p class="dialogo">—Allí está Pi —confirmó Alfín—. Y el destino de todo el reino nos espera con él.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <a href="sda6.html" class="nav-btn">← SDA 6</a>
+    <span class="nav-title">JaqueMáTICas · SDA 7</span>
+    <a href="sda8.html" class="nav-btn">SDA 8 →</a>
+  </nav>
+
+  <main class="sda-content">
+
+    <div class="sda-header">
+      <img src="ALFIN guay.png" alt="Alfin el Informático" class="sda-character-img">
+      <div class="sda-header-text">
+        <span class="sda-number">SITUACIÓN DE APRENDIZAJE 7</span>
+        <h1>Alfin el Informático</h1>
+        <span class="sda-topic">El Observatorio de Datos</span>
+        <p>Alfín analiza cada movimiento del reino desde su observatorio de cristal. Sus gráficas y tablas de datos son la clave para encontrar al Rey Pi.</p>
+      </div>
+    </div>
+
+    <div class="chess-divider"></div>
+
+    <div class="cards-grid-2">
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3>Leer el Capítulo</h3>
+        <p>Acompaña a Alfín en su observatorio mientras analiza datos y gráficas para descubrir dónde se oculta el Rey Pi.</p>
+        <button class="card-btn" onclick="document.getElementById('cap-modal').classList.add('open')">📖 Leer Capítulo 7</button>
+      </div>
+      <div class="card">
+        <span class="card-icon">📓</span>
+        <h3>Cuaderno Digital</h3>
+        <p>Fichas interactivas en LiveWorksheets. Practica con datos, gráficas y estadística.</p>
+        <a href="https://www.liveworksheets.com/es/student-workbook/7681959" target="_blank" class="card-btn">📓 Abrir Cuaderno</a>
+      </div>
+    </div>
+
+    <div class="cards-grid-2">
+      <div class="card card-video">
+        <div class="card-header-row">
+          <span class="card-icon">🎬</span>
+          <h3>Flipped Classroom</h3>
+          <span class="fc-badge">Vídeo</span>
+        </div>
+        <p>Introducción a la Defensa Francesa</p>
+        <div class="video-wrap">
+          <div class="yt-facade" onclick="ytPlay(this,'pAHYuLSHUYY')" role="button" tabindex="0" aria-label="Reproducir vídeo">
+            <img src="https://i.ytimg.com/vi/pAHYuLSHUYY/hqdefault.jpg" alt="Miniatura vídeo" loading="lazy">
+            <div class="yt-play-btn">
+              <svg viewBox="0 0 68 48" width="68" height="48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/>
+                <path d="M45 24L27 14v20" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card puzzle-mini-card">
+        <span class="card-icon">♟</span>
+        <h3>Reto de Ajedrez</h3>
+        <p class="puzzle-opening">Defensa Francesa · variante Tarrasch</p>
+        <span class="puzzle-badge">★☆☆ Iniciación</span>
+        <p class="puzzle-desc">Tácticas sencillas en posiciones de Defensa Francesa. ¡Un reto ideal para seguir aprendiendo!</p>
+        <a href="practica_ajedrez.html?op=francesa" class="card-btn">♟ Practicar en el tablero</a>
+      </div>
+    </div>
+
+    <details class="resource-details">
+      <summary>
+        <span class="resource-icon">🎮</span>
+        <span class="resource-title">Actividad Interactiva · Lee la Gráfica</span>
+        <span class="resource-expand">▼</span>
+      </summary>
+      <div class="resource-content">
+        <div class="mini-quiz">
+          <div class="quiz-chart">
+            <p class="quiz-chart-title">🏅 Deportes favoritos de la clase (25 alumnos)</p>
+            <div class="chart-row">
+              <span class="chart-label">Fútbol</span>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="width:64%"></div></div>
+              <span class="chart-val">8</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">Baloncesto</span>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="width:48%"></div></div>
+              <span class="chart-val">6</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">Natación</span>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="width:40%"></div></div>
+              <span class="chart-val">5</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">Tenis</span>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="width:24%"></div></div>
+              <span class="chart-val">3</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">Ciclismo</span>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="width:24%"></div></div>
+              <span class="chart-val">3</span>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">1. ¿Cuántos alumnos prefieren el fútbol?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">6</button>
+              <button data-ok onclick="checkAnswer(this,true)">8</button>
+              <button onclick="checkAnswer(this,false)">3</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">2. ¿Cuál es el deporte más popular de la clase?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">Baloncesto</button>
+              <button data-ok onclick="checkAnswer(this,true)">Fútbol</button>
+              <button onclick="checkAnswer(this,false)">Natación</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">3. ¿Cuántos alumnos hay en total en la clase?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">20</button>
+              <button onclick="checkAnswer(this,false)">23</button>
+              <button data-ok onclick="checkAnswer(this,true)">25</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">4. ¿Cuántos alumnos MÁS prefieren fútbol que tenis?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">3</button>
+              <button data-ok onclick="checkAnswer(this,true)">5</button>
+              <button onclick="checkAnswer(this,false)">8</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">5. ¿Qué deporte tiene el mismo número de alumnos que el tenis?</p>
+            <div class="quiz-opts">
+              <button data-ok onclick="checkAnswer(this,true)">Ciclismo</button>
+              <button onclick="checkAnswer(this,false)">Natación</button>
+              <button onclick="checkAnswer(this,false)">Fútbol</button>
+            </div>
+          </div>
+          <div class="quiz-score"></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="cards-grid-2">
+      <div class="card">
+        <span class="card-icon">♟️</span>
+        <h3>Ajedrez Matemático</h3>
+        <p>Cruza el tablero de ajedrez: acierta cada prueba de estadística para que tu pieza avance hasta la corona 👑.</p>
+        <a href="ajedrez/Nivel_7_Estadistica.html" class="card-btn">♟️ Jugar Nivel 7</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎮</span>
+        <h3>Videojuego del Reino</h3>
+        <p>Juega el Capítulo 7 en pixel art: elige nivel (bronce, plata u oro) e interpreta las gráficas de datos. ¡Datos distintos cada vez!</p>
+        <a href="juego/Capitulo_7_Estadistica.html" class="card-btn">🎮 Jugar Capítulo 7</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔮</span>
+        <h3>Recursos Extra</h3>
+        <p>Próximamente: más juegos y actividades para tablet y ordenador.</p>
+        <button class="card-btn coming-soon">🔒 Próximamente</button>
+      </div>
+    </div>
+
+    <div class="chess-divider"></div>
+
+    <div class="bottom-nav">
+      <a href="sda6.html" class="nav-btn">← SDA 6</a>
+      <a href="index.html" class="nav-btn home-btn">⌂ Mapa del Reino</a>
+      <a href="sda8.html" class="nav-btn">SDA 8 →</a>
+    </div>
+
+  </main>
+  <div class="lock-overlay" id="lock-overlay">
+    <div class="lock-box">
+      <div class="lock-icon">🔒</div>
+      <h2>Unidad bloqueada</h2>
+      <p>Introduce el código secreto para acceder a esta unidad.</p>
+      <input class="lock-input" id="lock-input" type="text" placeholder="Código..." maxlength="20" autocomplete="off" onkeydown="if(event.key==='Enter')tryUnlock(7)">
+      <button class="lock-btn" onclick="tryUnlock(7)">🗝️ Entrar</button>
+      <span class="lock-error" id="lock-error">Código incorrecto. ¡Inténtalo de nuevo!</span>
+      <a href="index.html" class="lock-back">← Volver al Mapa del Reino</a>
+    </div>
+  </div>
+  <script src="utils.js"></script>
+  <script>initLock(7);</script>
+</body>
+</html>

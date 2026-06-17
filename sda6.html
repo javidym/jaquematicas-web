@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDA 6 · El Reloj del Ajedrez · JaqueMáTICas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sda-page">
+
+  <div class="chapter-modal" id="cap-modal">
+    <div class="chapter-modal-inner">
+      <button class="chapter-modal-close" onclick="document.getElementById('cap-modal').classList.remove('open')" aria-label="Cerrar">✕</button>
+      <img src="imagenes/web_cap7_alfin.jpg" alt="Ilustración Capítulo 6" class="chapter-illus" loading="lazy">
+      <div class="chapter-text">
+        <h2>Capítulo 6: La Carrera del Reloj Real</h2>
+        <p>Guiados por Rabal, el grupo llegó al Salón del Tiempo, donde el gran reloj de ajedrez permanecía inmóvil. El silencio era tan profundo que casi se oía el peso del tiempo detenido.</p>
+        <p class="dialogo">—Sin las agujas, el ritmo del reino está paralizado —dijo Alcudia, observando el reloj.</p>
+        <p>Las agujas estaban escondidas en los extremos opuestos del tablero, protegidas por un antiguo hechizo que solo podía romperse moviéndose según las reglas del ajedrez.</p>
+        <p>Vinalopop dio el primer paso, avanzando casilla a casilla como un peón valiente. Rabal lo siguió saltando en L, mientras Glorieta trazaba elegantes diagonales de luz. Alcudia, firme, se movía en líneas rectas, guiando el camino con precisión.</p>
+        <p>Cada movimiento correcto hacía brillar una parte del reloj; los errores apagaban la luz y hacían vibrar el suelo.</p>
+        <p>Con paciencia y trabajo en equipo, alcanzaron ambas agujas y las colocaron con cuidado en su sitio.</p>
+        <p>El reloj despertó con un tic-tac que resonó en todo el Reino de Vainilla. Las luces del salón se encendieron y un suave resplandor dorado envolvió al grupo.</p>
+        <p class="dialogo">—El orden vuelve —susurró Glorieta—. Pero aún falta el ingenioso Alfín… y el rey.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <a href="sda5.html" class="nav-btn">← SDA 5</a>
+    <span class="nav-title">JaqueMáTICas · SDA 6</span>
+    <a href="sda7.html" class="nav-btn">SDA 7 →</a>
+  </nav>
+
+  <main class="sda-content">
+
+    <div class="sda-header">
+      <div class="sda-character-emoji">⏰</div>
+      <div class="sda-header-text">
+        <span class="sda-number">SITUACIÓN DE APRENDIZAJE 6</span>
+        <h1>El Reloj del Ajedrez</h1>
+        <span class="sda-topic">La Carrera del Reloj Real</span>
+        <p>El tiempo del reino se ha detenido. Las agujas del gran reloj de ajedrez están perdidas y solo los movimientos correctos de las piezas pueden recuperarlas.</p>
+      </div>
+    </div>
+
+    <div class="chess-divider"></div>
+
+    <div class="cards-grid-2">
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3>Leer el Capítulo</h3>
+        <p>Descubre cómo el equipo usa los movimientos del ajedrez para recuperar las agujas del gran reloj real.</p>
+        <button class="card-btn" onclick="document.getElementById('cap-modal').classList.add('open')">📖 Leer Capítulo 6</button>
+      </div>
+      <div class="card">
+        <span class="card-icon">📓</span>
+        <h3>Cuaderno Digital</h3>
+        <p>Fichas interactivas en LiveWorksheets. Practica con el tiempo y su medida.</p>
+        <a href="https://www.liveworksheets.com/es/student-workbook/7681958" target="_blank" class="card-btn">📓 Abrir Cuaderno</a>
+      </div>
+    </div>
+
+    <div class="cards-grid-2">
+      <div class="card card-video">
+        <div class="card-header-row">
+          <span class="card-icon">🎬</span>
+          <h3>Flipped Classroom</h3>
+          <span class="fc-badge">Vídeo</span>
+        </div>
+        <p>El reloj de ajedrez: cómo funciona y se usa</p>
+        <div class="video-wrap">
+          <div class="yt-facade" onclick="ytPlay(this,'w9YHgx2dySg')" role="button" tabindex="0" aria-label="Reproducir vídeo">
+            <img src="https://i.ytimg.com/vi/w9YHgx2dySg/hqdefault.jpg" alt="Miniatura vídeo" loading="lazy">
+            <div class="yt-play-btn">
+              <svg viewBox="0 0 68 48" width="68" height="48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/>
+                <path d="M45 24L27 14v20" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card puzzle-mini-card">
+        <span class="card-icon">♟</span>
+        <h3>Reto de Ajedrez</h3>
+        <p class="puzzle-opening">Defensa Francesa · 1.e4 e6 2.d4 d5</p>
+        <span class="puzzle-badge">★☆☆ Iniciación</span>
+        <p class="puzzle-desc">Tácticas sencillas en posiciones de Defensa Francesa. ¡Un reto ideal para seguir aprendiendo!</p>
+        <a href="practica_ajedrez.html?op=francesa" class="card-btn">♟ Practicar en el tablero</a>
+      </div>
+    </div>
+
+    <details class="resource-details">
+      <summary>
+        <span class="resource-icon">🎮</span>
+        <span class="resource-title">Actividad Interactiva · El Tiempo y la Hora</span>
+        <span class="resource-expand">▼</span>
+      </summary>
+      <div class="resource-content">
+        <div class="mini-quiz">
+          <div class="quiz-q">
+            <p class="quiz-q-text">1. ¿Cuántos minutos tiene una hora?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">30</button>
+              <button onclick="checkAnswer(this,false)">100</button>
+              <button data-ok onclick="checkAnswer(this,true)">60</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">2. Son las 3:15. ¿Cómo se dice en palabras?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">Las tres menos cuarto</button>
+              <button data-ok onclick="checkAnswer(this,true)">Las tres y cuarto</button>
+              <button onclick="checkAnswer(this,false)">Las tres y media</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">3. La clase empieza a las 9:00 y acaba a las 9:45. ¿Cuánto dura?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">30 minutos</button>
+              <button data-ok onclick="checkAnswer(this,true)">45 minutos</button>
+              <button onclick="checkAnswer(this,false)">1 hora</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">4. ¿Cuántas horas tiene un día completo?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">12</button>
+              <button data-ok onclick="checkAnswer(this,true)">24</button>
+              <button onclick="checkAnswer(this,false)">60</button>
+            </div>
+          </div>
+          <div class="quiz-q">
+            <p class="quiz-q-text">5. Son las 7:30. ¿Cuántos minutos faltan para las 8:00?</p>
+            <div class="quiz-opts">
+              <button onclick="checkAnswer(this,false)">20 minutos</button>
+              <button onclick="checkAnswer(this,false)">15 minutos</button>
+              <button data-ok onclick="checkAnswer(this,true)">30 minutos</button>
+            </div>
+          </div>
+          <div class="quiz-score"></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="cards-grid-2">
+      <div class="card">
+        <span class="card-icon">♟️</span>
+        <h3>Ajedrez Matemático</h3>
+        <p>Cruza el tablero de ajedrez: acierta cada prueba del tiempo para que tu pieza avance hasta la corona 👑.</p>
+        <a href="ajedrez/Nivel_6_El_tiempo.html" class="card-btn">♟️ Jugar Nivel 6</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🎮</span>
+        <h3>Videojuego del Reino</h3>
+        <p>Juega el Capítulo 6 en pixel art: elige nivel (bronce, plata u oro) y supera los retos del tiempo y el reloj. ¡Preguntas distintas cada vez!</p>
+        <a href="juego/Capitulo_6_El_tiempo.html" class="card-btn">🎮 Jugar Capítulo 6</a>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔮</span>
+        <h3>Recursos Extra</h3>
+        <p>Próximamente: más juegos y actividades para tablet y ordenador.</p>
+        <button class="card-btn coming-soon">🔒 Próximamente</button>
+      </div>
+    </div>
+
+    <div class="chess-divider"></div>
+
+    <div class="bottom-nav">
+      <a href="sda5.html" class="nav-btn">← SDA 5</a>
+      <a href="index.html" class="nav-btn home-btn">⌂ Mapa del Reino</a>
+      <a href="sda7.html" class="nav-btn">SDA 7 →</a>
+    </div>
+
+  </main>
+  <div class="lock-overlay" id="lock-overlay">
+    <div class="lock-box">
+      <div class="lock-icon">🔒</div>
+      <h2>Unidad bloqueada</h2>
+      <p>Introduce el código secreto para acceder a esta unidad.</p>
+      <input class="lock-input" id="lock-input" type="text" placeholder="Código..." maxlength="20" autocomplete="off" onkeydown="if(event.key==='Enter')tryUnlock(6)">
+      <button class="lock-btn" onclick="tryUnlock(6)">🗝️ Entrar</button>
+      <span class="lock-error" id="lock-error">Código incorrecto. ¡Inténtalo de nuevo!</span>
+      <a href="index.html" class="lock-back">← Volver al Mapa del Reino</a>
+    </div>
+  </div>
+  <script src="utils.js"></script>
+  <script>initLock(6);</script>
+</body>
+</html>

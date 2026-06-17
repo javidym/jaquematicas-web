@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRUEBA DE SALTO · Videojuego del Reino</title>
+<link rel="stylesheet" href="vainilla.css">
+</head>
+<body>
+<div id="app">
+  <section id="chapter" class="screen active">
+    <div class="panel">
+      <div class="topbar">
+        <a class="btn azul" href="index.html">◀ Menú del juego</a>
+        <span class="badge">🦘 PRUEBA DE SALTO (Cap. 1)</span>
+        <span class="badge" id="moveBadge">⚡ 0</span>
+      </div>
+      <div class="center" style="margin-bottom:8px">
+        <p class="small">Esta es la versión BUENA (salto flotante nuevo). Pulsa un nivel para entrar al instante:</p>
+        <button class="btn" onclick="testJump('bronce')">🥉 Bronce</button>
+        <button class="btn azul" onclick="testJump('plata')">🥈 Plata</button>
+        <button class="btn oro" onclick="testJump('oro')">🥇 Oro</button>
+      </div>
+      <div id="chStory"></div>
+      <div id="chGame"></div>
+    </div>
+  </section>
+</div>
+<script src="engine.js"></script>
+<script>
+  function testJump(l){ MODE='single'; LEVEL=l; curChapter=0;
+    document.getElementById('chStory').innerHTML=''; startPlatformer();
+    const mb=document.getElementById('moveBadge'); if(mb) mb.textContent='⚡ '+(state.movimientos||0); }
+  testJump('bronce');
+</script>
+</body>
+</html>

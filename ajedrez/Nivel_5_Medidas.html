@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nivel 5 · Medidas · Ajedrez Matemático</title>
+<link rel="stylesheet" href="ajedrez.css">
+</head>
+<body>
+<div id="app">
+  <section id="play" class="screen active">
+    <div class="panel">
+      <div class="topbar">
+        <a class="btn azul" href="index.html">◀ Menú</a>
+        <span class="badge" id="lvlBadge">Nivel 5</span>
+        <span class="badge" id="topicBadge">Medidas</span>
+        <span class="badge"><span class="hearts" id="hearts">❤️❤️❤️</span></span>
+      </div>
+      <canvas id="board" width="400" height="400"></canvas>
+      <p class="center small" id="stepInfo">Casilla 0 de 6 · ¡Llega a la corona 👑!</p>
+      <div id="quiz"></div>
+    </div>
+  </section>
+</div>
+<script src="ajedrez.js"></script>
+<script>initLevel(5);</script>
+</body>
+</html>

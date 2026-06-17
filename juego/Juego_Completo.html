@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Reino de Vainilla · Juego completo · JaqueMáTICas</title>
+<link rel="stylesheet" href="vainilla.css">
+</head>
+<body>
+<div id="game">
+
+  <section id="intro" class="screen active">
+    <div class="panel center">
+      <canvas id="introCanvas" width="320" height="120"></canvas>
+      <h1>EL REINO DE VAINILLA</h1>
+      <p style="color:var(--oro)">★ JaqueMáTICas · 5º de Primaria ★</p>
+      <div class="narr" style="text-align:left">
+        <p>Hace muchísimo tiempo, en un valle dorado donde el aire olía a miel,
+        se alzaba el <b>Reino de Vainilla</b>, custodiado por el sabio Rey Pi y sus guardianes.</p>
+        <p>Pero una noche, un hechizo del <b>Reino de Chocolate</b> arrastró a los
+        guardianes y atrapó al Rey. El tablero quedó dormido… hasta que la magia
+        de los alumnos de 5º despertó al peón <b>Vinalopop</b>.</p>
+        <p class="speaker">— Guardianes… salvad nuestro reino.</p>
+      </div>
+      <p class="small">Elige tu nivel y resuelve los 8 retos para liberar al Rey Pi.</p>
+      <button class="btn oro" onclick="startGame()">▶ COMENZAR LA AVENTURA</button>
+      <div>
+        <a class="btn azul" href="index.html">◀ Menú</a>
+        <a class="reset" onclick="hardReset()">borrar progreso guardado</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="map" class="screen">
+    <div class="panel">
+      <div id="mapHud">
+        <span class="badge">🏰 Reino de Vainilla</span>
+        <span class="badge" id="levelBadge">🥈 Plata</span>
+        <span class="badge" id="progressBadge">Capítulo 1 / 8</span>
+        <span class="badge" id="starBadge">★ 0</span>
+        <span class="badge" id="moveBadge">⚡ 0</span>
+        <button class="btn oro" style="font-size:9px;padding:6px 10px;margin:0" onclick="openShop()">🛒 Tienda</button>
+      </div>
+      <div id="mapWrap"><canvas id="mapCanvas" width="900" height="540"></canvas></div>
+      <div class="center" style="margin-top:10px">
+        <p class="small" id="mapHint">Pulsa la parada brillante para iniciar el reto del capítulo.</p>
+        <div class="party" id="partyStrip"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chapter" class="screen">
+    <div class="panel">
+      <div class="topbar">
+        <button class="btn azul" onclick="goMap()">◀ Mapa</button>
+        <span class="badge" id="chTitle">Capítulo</span>
+        <span class="badge" id="chStars">★</span>
+      </div>
+      <div id="chStory"></div>
+      <div id="chGame"></div>
+    </div>
+  </section>
+
+  <section id="victory" class="screen">
+    <div class="panel center">
+      <div class="victory-emoji">👑 ✨ 🏆 ✨ 👑</div>
+      <h1>¡REINO SALVADO!</h1>
+      <canvas id="winCanvas" width="360" height="120"></canvas>
+      <div class="narr" style="text-align:left">
+        <p>El cristal se rompió y una luz blanca envolvió el palacio. El <b>Rey Pi</b> abrió los ojos.</p>
+        <p class="speaker">— Habéis restaurado la armonía. Gracias, guardianes. Habéis salvado nuestro reino.</p>
+      </div>
+      <h2>¡ENHORABUENA, GUARDIANES DE 5º!</h2>
+      <p>Habéis superado los <b>8 retos</b>: multiplicación y división, decimales, dinero,
+      fracciones, unidades de medida, el tiempo, estadística y geometría.</p>
+      <p style="color:var(--oro)">Sois auténticos maestros de las JaqueMáTICas. 🎉</p>
+      <div class="party" id="winParty"></div>
+      <button class="btn oro" onclick="viewMap()">◀ Ver el mapa</button>
+      <button class="btn rojo" onclick="hardReset()">Jugar otra vez</button>
+      <a class="btn azul" href="index.html">▶ Menú</a>
+    </div>
+  </section>
+
+</div>
+<script src="engine.js"></script>
+<script>initFullGame();</script>
+</body>
+</html>

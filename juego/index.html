@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Reino de Vainilla · JaqueMáTICas 5º</title>
+<link rel="stylesheet" href="vainilla.css">
+</head>
+<body>
+<div id="game">
+  <section class="screen active">
+    <div class="panel center">
+      <canvas id="introCanvas" width="320" height="120"></canvas>
+      <h1>EL REINO DE VAINILLA</h1>
+      <p style="color:var(--oro)">★ JaqueMáTICas · 5º de Primaria ★</p>
+      <p class="small">Salva el Reino de Vainilla superando los 8 retos.
+      Elige nivel (🥉 bronce, 🥈 plata, 🥇 oro) y juega: <b>las preguntas se generan al azar</b>, nunca se repiten.</p>
+
+      <a class="btn oro" href="Juego_Completo.html" style="font-size:13px">👑 JUGAR LA AVENTURA COMPLETA</a>
+
+      <h3 style="margin-top:18px">Capítulos sueltos</h3>
+      <div class="chapGrid">
+        <a class="chapCard" href="Capitulo_1_Multiplicacion_y_division.html"><span class="num">1</span><span class="tp">🌳 Multiplicación y división</span></a>
+        <a class="chapCard" href="Capitulo_2_Decimales.html"><span class="num">2</span><span class="tp">🪜 Decimales</span></a>
+        <a class="chapCard" href="Capitulo_3_Dinero.html"><span class="num">3</span><span class="tp">🪙 El dinero</span></a>
+        <a class="chapCard" href="Capitulo_4_Fracciones.html"><span class="num">4</span><span class="tp">🍰 Fracciones</span></a>
+        <a class="chapCard" href="Capitulo_5_Unidades_de_medida.html"><span class="num">5</span><span class="tp">📏 Unidades de medida</span></a>
+        <a class="chapCard" href="Capitulo_6_El_tiempo.html"><span class="num">6</span><span class="tp">⏰ El tiempo</span></a>
+        <a class="chapCard" href="Capitulo_7_Estadistica.html"><span class="num">7</span><span class="tp">📊 Estadística</span></a>
+        <a class="chapCard" href="Capitulo_8_Geometria.html"><span class="num">8</span><span class="tp">🔷 Geometría</span></a>
+      </div>
+
+      <p class="center small" style="color:#ffb38a">❤️❤️❤️ En cada reto: si cometes 3 fallos, la prueba se reinicia desde el principio.</p>
+      <a class="btn azul" href="../index.html">◀ Volver a la web JaqueMáTICas</a>
+    </div>
+  </section>
+</div>
+<script src="engine.js"></script>
+<script>drawIntroArt();</script>
+</body>
+</html>

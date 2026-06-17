@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajedrez Matemático · Juego completo · JaqueMáTICas</title>
+<link rel="stylesheet" href="ajedrez.css">
+</head>
+<body>
+<div id="app">
+
+  <section id="intro" class="screen active">
+    <div class="panel center">
+      <canvas id="introCanvas" width="320" height="120"></canvas>
+      <h1>AJEDREZ MATEMÁTICO</h1>
+      <p style="color:var(--oro)">★ Reino de Vainilla · JaqueMáTICas ★</p>
+      <div class="narr" style="text-align:left">
+        <p>Tu pieza debe llegar a la <b>casilla clave</b> 👑 moviéndose como en el ajedrez:
+        el <b>peón</b> 1 casilla, la <b>torre</b> en línea recta, el <b>alfil</b> en diagonal,
+        el <b>caballo</b> en L (¡salta rocas!) y la <b>dama</b> en todas direcciones.</p>
+        <p>Cada vez que <b>aciertas una prueba</b> eliges en qué casilla caer. Esquiva las
+        <b>rocas</b> 🪨. Hay <b>8 niveles</b>: supéralos y libera al Rey Pi.</p>
+      </div>
+      <div class="lvlgrid">
+        <div class="lvlcard"><span class="ic">➗</span>1 · Operaciones</div>
+        <div class="lvlcard"><span class="ic">🔢</span>2 · Decimales</div>
+        <div class="lvlcard"><span class="ic">🪙</span>3 · Dinero</div>
+        <div class="lvlcard"><span class="ic">🍰</span>4 · Fracciones</div>
+        <div class="lvlcard"><span class="ic">📏</span>5 · Medidas</div>
+        <div class="lvlcard"><span class="ic">⏰</span>6 · El tiempo</div>
+        <div class="lvlcard"><span class="ic">📊</span>7 · Estadística</div>
+        <div class="lvlcard"><span class="ic">🔷</span>8 · Geometría</div>
+      </div>
+      <p class="small">❤️❤️❤️ 3 vidas por nivel. Si las pierdes, repites el nivel.</p>
+      <button class="btn oro" onclick="startGame()">▶ EMPEZAR A JUGAR</button>
+      <a class="btn azul" href="index.html">◀ Menú</a>
+    </div>
+  </section>
+
+  <section id="play" class="screen">
+    <div class="panel">
+      <div class="topbar">
+        <a class="btn azul" href="index.html">◀ Menú</a>
+        <span class="badge" id="lvlBadge">Nivel 1</span>
+        <span class="badge" id="topicBadge">Operaciones</span>
+        <span class="badge"><span class="hearts" id="hearts">❤️❤️❤️</span></span>
+      </div>
+      <canvas id="board" width="400" height="400"></canvas>
+      <p class="center small" id="stepInfo">Llega a la casilla clave 👑 esquivando las rocas 🪨</p>
+      <div id="quiz"></div>
+    </div>
+  </section>
+
+  <section id="win" class="screen">
+    <div class="panel center">
+      <div class="victory-emoji">👑 ✨ 🏆 ✨ 👑</div>
+      <h1>¡REINO SALVADO!</h1>
+      <canvas id="winCanvas" width="360" height="120"></canvas>
+      <div class="narr" style="text-align:left">
+        <p>Has cruzado los 8 tableros del reino y has liberado al <b>Rey Pi</b>.</p>
+        <p style="color:var(--oro)">— ¡Gracias, guardián! Has demostrado ser un maestro de las matemáticas.</p>
+      </div>
+      <h2>¡ENHORABUENA, GUARDIÁN DE 5º!</h2>
+      <p>Has superado operaciones, decimales, dinero, fracciones, medidas, el tiempo,
+      la estadística y la geometría. 🎉</p>
+      <button class="btn oro" onclick="resetAll()">▶ Jugar otra vez</button>
+      <a class="btn azul" href="index.html">▶ Menú</a>
+    </div>
+  </section>
+
+</div>
+<script src="ajedrez.js"></script>
+<script>drawIntroArt();</script>
+</body>
+</html>
