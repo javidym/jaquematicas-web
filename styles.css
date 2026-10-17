@@ -603,3 +603,23 @@ a, button, .card-btn, .nav-btn, .hotspot, .sda-index-item,
   font-size: .78rem; text-decoration: none; opacity: .65; transition: opacity .2s;
 }
 .lock-back:hover { opacity: 1; }
+
+
+/* ============================================================
+   SESIONES TIC Y JUEGOS DE CLASE
+   ============================================================ */
+.tic-section { margin-top:8px; animation: fadeInUp .4s .3s var(--ease) both; }
+.tic-head { display:flex; align-items:center; gap:12px; margin:4px 0 14px; }
+.tic-head .tic-ico { font-size:2rem; line-height:1; }
+.tic-head h2 { font-family:'Cinzel',serif; color:var(--gold); font-size:1.15rem; letter-spacing:.04em; }
+.tic-head p { color:var(--parch-dark); font-size:.85rem; opacity:.85; font-style:italic; }
+.tic-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+.ses-chip { font-family:'Cinzel',serif; font-size:.68rem; font-weight:700; color:var(--gold-light); background:rgba(201,168,76,.14); border:1px solid rgba(201,168,76,.4); border-radius:20px; padding:2px 9px; letter-spacing:.04em; }
+.who-tag { font-size:.7rem; font-weight:700; border-radius:20px; padding:2px 9px; }
+.who-tag.alumnado { background:rgba(95,209,143,.14); color:#8fe0b0; border:1px solid rgba(95,209,143,.4); }
+.who-tag.maestro { background:rgba(232,200,122,.1); color:var(--gold-light); border:1px dashed rgba(232,200,122,.55); }
+.who-tag.mix { background:rgba(120,170,230,.14); color:#a9c8f0; border:1px solid rgba(120,170,230,.4); }
+.btn-list { display:flex; flex-direction:column; gap:7px; margin-top:auto; }
+.card-btn.btn-maestro { background:transparent; color:var(--gold-light); border:1.5px solid rgba(201,168,76,.55); }
+.card-btn.btn-maestro:hover { background:rgba(201,168,76,.15); color:var(--gold-light); }
+.tic-note { color:var(--parch-dark); font-size:.78rem; opacity:.75; margin:-4px 0 6px; text-align:center; }
