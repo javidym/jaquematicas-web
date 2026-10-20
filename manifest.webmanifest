@@ -1,0 +1,26 @@
+{
+  "name": "JaqueMáTICas · Reino del Ajedrez",
+  "short_name": "JaqueMáTICas",
+  "description": "El Reino de Vainilla: situaciones de aprendizaje, juegos y ajedrez matemático de 5º de Primaria.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1E3A2B",
+  "theme_color": "#1E3A2B",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/jm-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/jm-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -31,6 +31,15 @@
   .btn.sec{background:#2e6a9e;color:#fff;border-color:#1d486e;box-shadow:0 3px 0 #143147;}
   .btn.gray{background:#6b5d49;color:#fff;border-color:#4a3f30;box-shadow:0 3px 0 #36301f;}
 </style>
+<!--pwa-->
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1E3A2B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="JaqueMáTICas">
+<link rel="apple-touch-icon" href="/jm-icon-512.png">
+<link rel="icon" type="image/png" href="/jm-icon-512.png">
 </head>
 <body>
   <h1>♟ Reto de Ajedrez del Reino</h1>
@@ -210,5 +219,6 @@ function render(){
 })();
 newProblem();
 </script>
+<script>/*pwa-sw*/if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});}</script>
 </body>
 </html>

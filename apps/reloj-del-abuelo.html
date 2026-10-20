@@ -215,6 +215,15 @@ button{font:inherit;cursor:pointer;border:0}
 .cc-mid button{background:rgba(255,255,255,.12);color:var(--cream2);border-radius:10px;padding:10px 14px;font-size:16px;font-weight:700}
 .cc-mid span{color:var(--cream2);opacity:.8;font-size:13px;width:100%;text-align:center}
 </style>
+<!--pwa-->
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1E3A2B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="JaqueMáTICas">
+<link rel="apple-touch-icon" href="/jm-icon-512.png">
+<link rel="icon" type="image/png" href="/jm-icon-512.png">
 </head>
 <body>
 <div id="app"></div>
@@ -2810,5 +2819,6 @@ const TAB={
 };
 route();
 </script>
+<script>/*pwa-sw*/if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});}</script>
 </body>
 </html>

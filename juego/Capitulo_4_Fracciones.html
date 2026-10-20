@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cap 4 · Fracciones · Reino de Vainilla</title>
 <link rel="stylesheet" href="vainilla.css">
+<!--pwa-->
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1E3A2B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="JaqueMáTICas">
+<link rel="apple-touch-icon" href="/jm-icon-512.png">
+<link rel="icon" type="image/png" href="/jm-icon-512.png">
 </head>
 <body>
 <div id="game">
@@ -22,5 +31,6 @@
 </div>
 <script src="engine.js"></script>
 <script>initChapter(4);</script>
+<script>/*pwa-sw*/if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});}</script>
 </body>
 </html>

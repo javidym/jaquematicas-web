@@ -34,7 +34,16 @@ h1{font-family:Georgia,serif;font-size:clamp(26px,5vw,44px);text-align:center;co
 .log{font-size:14px;color:#E9D7AE;text-align:center}
 .reset{background:none;border:1px solid #8B6914;color:#C9B38A;border-radius:8px;padding:4px 10px;font-size:12px;cursor:pointer;margin-top:8px}
 @media (max-width:640px){.teams{grid-template-columns:repeat(3,1fr)}.row{grid-template-columns:1fr}.digits input{width:54px;height:64px}}
-</style></head><body><div class="wrap">
+</style><!--pwa-->
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1E3A2B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="JaqueMáTICas">
+<link rel="apple-touch-icon" href="/jm-icon-512.png">
+<link rel="icon" type="image/png" href="/jm-icon-512.png">
+</head><body><div class="wrap">
 <h1>🔐 La caja fuerte del Vinalopó</h1>
 <div class="sub">Gymkana del río · SdA 1 · Introducid los datos que habéis conseguido en las pruebas <i>· Введіть дані</i></div>
 <div id="form">
@@ -88,4 +97,5 @@ document.getElementById('reset').onclick=()=>{if(confirm('¿Borrar el registro d
 function confetti(){const cols=['#F0C75E','#2F7FC1','#C0392B','#27935A','#8E44AD','#E07F27'];for(let i=0;i<90;i++){const s=document.createElement('div');s.className='conf';
  s.style.left=Math.random()*100+'vw';s.style.background=cols[i%cols.length];s.style.animationDuration=(2+Math.random()*2.5)+'s';s.style.animationDelay=(Math.random()*.6)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),5200);}}
 drawTeams();drawLog();
-</script></body></html>
+</script><script>/*pwa-sw*/if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});}</script>
+</body></html>
